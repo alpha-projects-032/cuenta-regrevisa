@@ -3,17 +3,26 @@
 /* Estilos base */
 body {
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    display: block; /* Cambia de flex a block para permitir el desplazamiento */
+    height: auto; /* Asegura que la altura se ajuste automáticamente */
     margin: 0;
-    overflow: hidden;
+    overflow: auto; /* Asegura que el desplazamiento esté habilitado */
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
 }
 
 /* Uso de H1 */
 h1 {
     font-family: 'Itim', cursive;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Para centrar verticalmente */
 }
 
 /* Fondo de video */
@@ -30,15 +39,12 @@ h1 {
 
 /* Contenedor de cuenta regresiva */
 .countdown-container {
-    position: relative;
-    text-align: center;
     padding: 20px;
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: auto;
+    margin: 10px auto;
 }
-
 
 /* Para contar los días */
 .countdown-item-title {
@@ -55,36 +61,30 @@ h1 {
     margin: 10px 0;
 }
 
-/* Media Queries para ajustar el diseño en móviles */
+/* Media Queries para ajustarse a pantallas pequeñas */
 @media (max-width: 768px) {
-    .countdown-container {
-        padding: 15px;
-        margin: 10px;
-    }
     .countdown-item-title {
         font-size: 2rem;
     }
     .countdown-item-text {
         font-size: 1.5rem;
     }
-    h1, .countdown-title {
-        font-size: 1.6rem;
+    .countdown-container {
+        padding: 15px;
+        margin: 15px auto;
     }
 }
 
 @media (max-width: 480px) {
-    .countdown-container {
-        padding: 15px;
-        margin: 10px auto;
-        width: 100%;
-    }
     .countdown-item-title {
         font-size: 1.5rem;
     }
     .countdown-item-text {
         font-size: 1.2rem;
     }
-    h1, .countdown-title {
-        font-size: 1.4rem;
+    .countdown-container {
+        padding: 10px;
+        margin: 10px auto;
+        width: 100%;
     }
 }
